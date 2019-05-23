@@ -12,7 +12,7 @@ class Solution(object):
                     i = nums.index(d)
                     j = nums.index(num)
                     return [j, i]
-                else:  # 相同元素和為解=>偷樑換柱
+                else:  # 相同元素和為解=>偷樑換柱，解決同樣元素的index問題
                     j = nums.index(num)
                     nums[j] = 'a'  # 換成str就不可能跟數字重複了
                     i = nums.index(d)
