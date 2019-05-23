@@ -1,0 +1,25 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        for i, num in enumerate(nums):
+            d = target - num
+            try:
+                if d != num:
+                    i = nums.index(d)
+                    j = nums.index(num)
+                    return [j, i]
+                else:  # 相同元素和為解=>偷樑換柱
+                    j = nums.index(num)
+                    nums[j] = 'a'  # 換成str就不可能跟數字重複了
+                    i = nums.index(d)
+                    return [j, i]
+            except:
+                pass
+                
+                
+# Runtime: 504 ms, faster than 44.05% of Python online submissions for Two Sum.
+# Memory Usage: 12.5 MB, less than 89.77% of Python online submissions for Two Sum.
